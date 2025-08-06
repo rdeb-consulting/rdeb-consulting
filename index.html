@@ -12,7 +12,7 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rdebconsulting.com/" />
+    <meta property="og:url" content="https://rdeb-consulting.github.io/rdeb-consulting/" />
     <meta property="og:title" content="RDEB Consulting - Construction Project Leadership & Strategic Execution" />
     <meta property="og:description" content="Expert construction consulting services across Canada. 25+ years experience in structural steel, hydro-mechanical systems, mining facilities, and heavy industrial construction." />
     
@@ -36,25 +36,35 @@
             background: transparent;
         }
         
-        body {
-            position: relative;
-            background-image: url('structural-steel-complex.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+        /* Desktop background */
+        @media (min-width: 768px) {
+            body {
+                position: relative;
+                background-image: url('structural-steel-complex.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+            
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                z-index: 0;
+                pointer-events: none;
+            }
         }
         
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 0;
-            pointer-events: none;
+        /* Mobile background - much lighter */
+        @media (max-width: 767px) {
+            body {
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            }
         }
         
         .content-wrapper {
@@ -64,6 +74,13 @@
         
         .text-shadow {
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        /* Mobile text shadow - lighter */
+        @media (max-width: 767px) {
+            .text-shadow {
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            }
         }
         
         .hover-scale {
@@ -77,6 +94,22 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Mobile-specific improvements */
+        @media (max-width: 767px) {
+            .mobile-card {
+                background: rgba(45, 45, 45, 0.95) !important;
+                border: 1px solid rgba(220, 38, 38, 0.3) !important;
+            }
+            
+            .mobile-text {
+                color: #f3f4f6 !important;
+            }
+            
+            .mobile-section {
+                background: rgba(26, 26, 26, 0.95) !important;
+            }
         }
         
     </style>
@@ -95,42 +128,42 @@
                     <a href="#about" class="text-gray-300 hover:text-rdeb-red transition-colors font-medium cursor-pointer">About</a>
                     <a href="#contact" class="text-gray-300 hover:text-rdeb-red transition-colors font-medium cursor-pointer">Contact</a>
                 </nav>
-                <a href="#contact" class="bg-rdeb-red hover:bg-red-700 text-white border-rdeb-red font-semibold px-6 py-2 rounded-md transition-colors">
+                <a href="#contact" class="bg-rdeb-red hover:bg-red-700 text-white border-rdeb-red font-semibold px-4 py-2 md:px-6 rounded-md transition-colors text-sm md:text-base">
                     📞 Get Consultation
                 </a>
             </div>
         </header>
 
         <!-- Hero Section -->
-        <section class="py-20 lg:py-32">
+        <section class="py-12 md:py-20 lg:py-32">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto text-center fade-in">
                     <!-- Large Centered RDEB Logo -->
-                    <div class="mb-8">
-                        <img src="rdeb-logo-original.webp" alt="RDEB Consulting Inc." class="h-40 w-auto mx-auto">
+                    <div class="mb-6 md:mb-8">
+                        <img src="rdeb-logo-original.webp" alt="RDEB Consulting Inc." class="h-24 md:h-40 w-auto mx-auto">
                     </div>
-                    <div class="mb-6 bg-rdeb-red/90 text-white border-rdeb-red text-lg px-4 py-2 rounded-full inline-block">
+                    <div class="mb-4 md:mb-6 bg-rdeb-red/90 text-white border-rdeb-red text-sm md:text-lg px-3 md:px-4 py-2 rounded-full inline-block">
                         25+ Years Construction Leadership Excellence
                     </div>
-                    <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-shadow">
+                    <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight text-shadow">
                         Strategic Construction
                         <span class="block text-rdeb-red">Project Leadership</span>
                     </h1>
-                    <p class="text-xl lg:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 text-gray-200 mobile-text max-w-3xl mx-auto leading-relaxed">
                         Expert consulting services for complex construction projects. Delivering strategic solutions, project scheduling, subcontractor management, effective client communication, and hands-on project leadership across structural steel, hydro-mechanical systems, mining facilities, and heavy industrial construction. Collaborating with engineers, stakeholders, and project teams to resolve challenges and ensure successful outcomes.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                        <a href="#contact" class="bg-rdeb-red hover:bg-red-700 text-lg px-8 py-4 font-semibold rounded-md transition-colors hover-scale">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6 md:mb-8">
+                        <a href="#contact" class="bg-rdeb-red hover:bg-red-700 text-base md:text-lg px-6 md:px-8 py-3 md:py-4 font-semibold rounded-md transition-colors hover-scale">
                             📅 Start Your Project →
                         </a>
-                        <a href="#experience" class="border-2 border-white text-white hover:bg-white hover:text-black text-lg px-8 py-4 font-semibold rounded-md transition-colors hover-scale">
+                        <a href="#experience" class="border-2 border-white text-white hover:bg-white hover:text-black text-base md:text-lg px-6 md:px-8 py-3 md:py-4 font-semibold rounded-md transition-colors hover-scale">
                             🏆 View Experience
                         </a>
                     </div>
                     <div class="grid grid-cols-1 gap-6 max-w-lg mx-auto">
                         <div class="text-center">
-                            <div class="text-3xl font-bold text-rdeb-red">25+</div>
-                            <div class="text-sm text-gray-400">Years Experience</div>
+                            <div class="text-2xl md:text-3xl font-bold text-rdeb-red">25+</div>
+                            <div class="text-xs md:text-sm text-gray-400 mobile-text">Years Experience</div>
                         </div>
                     </div>
                 </div>
@@ -138,31 +171,31 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-20">
+        <section id="experience" class="py-12 md:py-20 mobile-section">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16 fade-in">
-                    <div class="mb-4 bg-rdeb-red/20 text-red-400 border border-red-600/30 text-lg px-4 py-2 rounded-full inline-block">
+                <div class="text-center mb-12 md:mb-16 fade-in">
+                    <div class="mb-4 bg-rdeb-red/20 text-red-400 border border-red-600/30 text-sm md:text-lg px-3 md:px-4 py-2 rounded-full inline-block">
                         Core Expertise
                     </div>
-                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 mobile-text">
                         From Tradesperson to General Superintendent to Consultant
                     </h2>
-                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-base md:text-xl text-gray-300 mobile-text max-w-3xl mx-auto leading-relaxed">
                         A proven career progression built on hands-on expertise - Red Seal Ironworker and pipefitter advancing through the ranks to executive leadership and strategic consulting. Working closely with engineers to solve complex problems and bring practical field solutions to technical challenges.
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
                     <!-- Structural Steel Card -->
-                    <div class="bg-gray-900/80 border border-gray-700 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg p-6 hover-scale">
+                    <div class="bg-gray-900/80 mobile-card border border-gray-700 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg p-4 md:p-6 hover-scale">
                         <div class="text-center mb-4">
                             <div class="mx-auto mb-4 p-3 bg-rdeb-red rounded-lg w-fit">
                                 🏗️
                             </div>
-                            <h3 class="text-lg text-white font-semibold">Structural Steel & Heavy Lift</h3>
-                            <p class="text-gray-400 text-sm">Complex steel erection, crane operations, and heavy lift coordination</p>
+                            <h3 class="text-base md:text-lg text-white mobile-text font-semibold">Structural Steel & Heavy Lift</h3>
+                            <p class="text-gray-400 mobile-text text-xs md:text-sm">Complex steel erection, crane operations, and heavy lift coordination</p>
                         </div>
-                        <ul class="space-y-2 text-sm text-gray-300">
+                        <ul class="space-y-2 text-xs md:text-sm text-gray-300 mobile-text">
                             <li class="flex items-start space-x-2">
                                 <span class="text-rdeb-red">✓</span>
                                 <span>Structural steel erection and precast installation</span>
@@ -179,15 +212,15 @@
                     </div>
 
                     <!-- Hydro-Mechanical Card -->
-                    <div class="bg-gray-900/80 border border-gray-700 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg p-6 hover-scale">
+                    <div class="bg-gray-900/80 mobile-card border border-gray-700 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg p-4 md:p-6 hover-scale">
                         <div class="text-center mb-4">
                             <div class="mx-auto mb-4 p-3 bg-rdeb-red rounded-lg w-fit">
                                 ⚡
                             </div>
-                            <h3 class="text-lg text-white font-semibold">Hydro-Mechanical Systems</h3>
-                            <p class="text-gray-400 text-sm">Hydroelectric facility gates, spillways, and mechanical installations</p>
+                            <h3 class="text-base md:text-lg text-white mobile-text font-semibold">Hydro-Mechanical Systems</h3>
+                            <p class="text-gray-400 mobile-text text-xs md:text-sm">Hydroelectric facility gates, spillways, and mechanical installations</p>
                         </div>
-                        <ul class="space-y-2 text-sm text-gray-300">
+                        <ul class="space-y-2 text-xs md:text-sm text-gray-300 mobile-text">
                             <li class="flex items-start space-x-2">
                                 <span class="text-rdeb-red">✓</span>
                                 <span>Spillway gates and trash racks</span>
@@ -204,15 +237,15 @@
                     </div>
 
                     <!-- Industrial Piping Card -->
-                    <div class="bg-gray-900/80 border border-gray-700 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg p-6 hover-scale">
+                    <div class="bg-gray-900/80 mobile-card border border-gray-700 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg p-4 md:p-6 hover-scale">
                         <div class="text-center mb-4">
                             <div class="mx-auto mb-4 p-3 bg-rdeb-red rounded-lg w-fit">
                                 🏭
                             </div>
-                            <h3 class="text-lg text-white font-semibold">Industrial Piping & Process</h3>
-                            <p class="text-gray-400 text-sm">Complex piping networks, process systems, and pipeline construction</p>
+                            <h3 class="text-base md:text-lg text-white mobile-text font-semibold">Industrial Piping & Process</h3>
+                            <p class="text-gray-400 mobile-text text-xs md:text-sm">Complex piping networks, process systems, and pipeline construction</p>
                         </div>
-                        <ul class="space-y-2 text-sm text-gray-300">
+                        <ul class="space-y-2 text-xs md:text-sm text-gray-300 mobile-text">
                             <li class="flex items-start space-x-2">
                                 <span class="text-rdeb-red">✓</span>
                                 <span>Industrial piping systems</span>
@@ -229,15 +262,15 @@
                     </div>
 
                     <!-- Mining Card -->
-                    <div class="bg-gray-900/80 border border-gray-700 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg p-6 hover-scale">
+                    <div class="bg-gray-900/80 mobile-card border border-gray-700 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg p-4 md:p-6 hover-scale">
                         <div class="text-center mb-4">
                             <div class="mx-auto mb-4 p-3 bg-rdeb-red rounded-lg w-fit">
                                 🏢
                             </div>
-                            <h3 class="text-lg text-white font-semibold">Mining & Processing</h3>
-                            <p class="text-gray-400 text-sm">Potash mines, gold operations, and processing plant construction</p>
+                            <h3 class="text-base md:text-lg text-white mobile-text font-semibold">Mining & Processing</h3>
+                            <p class="text-gray-400 mobile-text text-xs md:text-sm">Potash mines, gold operations, and processing plant construction</p>
                         </div>
-                        <ul class="space-y-2 text-sm text-gray-300">
+                        <ul class="space-y-2 text-xs md:text-sm text-gray-300 mobile-text">
                             <li class="flex items-start space-x-2">
                                 <span class="text-rdeb-red">✓</span>
                                 <span>Mining facility construction</span>
@@ -255,7 +288,7 @@
                 </div>
 
                 <div class="text-center">
-                    <a href="#contact" class="bg-rdeb-red hover:bg-red-700 text-lg px-8 py-4 font-semibold rounded-md transition-colors hover-scale">
+                    <a href="#contact" class="bg-rdeb-red hover:bg-red-700 text-base md:text-lg px-6 md:px-8 py-3 md:py-4 font-semibold rounded-md transition-colors hover-scale">
                         📧 Discuss Your Project
                     </a>
                 </div>
@@ -263,159 +296,159 @@
         </section>
 
         <!-- Major Projects Section -->
-        <section id="projects" class="py-20">
+        <section id="projects" class="py-12 md:py-20">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16 fade-in">
-                    <div class="mb-4 bg-rdeb-red/20 text-red-400 border border-red-600/30 text-lg px-4 py-2 rounded-full inline-block">
+                <div class="text-center mb-12 md:mb-16 fade-in">
+                    <div class="mb-4 bg-rdeb-red/20 text-red-400 border border-red-600/30 text-sm md:text-lg px-3 md:px-4 py-2 rounded-full inline-block">
                         Major Projects
                     </div>
-                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 mobile-text">
                         Proven Track Record of Success
                     </h2>
-                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-base md:text-xl text-gray-300 mobile-text max-w-3xl mx-auto leading-relaxed">
                         Leading major infrastructure projects across Canada - from iconic stadiums to critical hydroelectric facilities and mining operations
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
                     <!-- Blue Bombers Stadium -->
-                    <div class="bg-gray-900/80 border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
-                        <div class="p-6">
+                    <div class="bg-gray-900/80 mobile-card border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
+                        <div class="p-4 md:p-6">
                             <div class="flex justify-between items-start mb-4">
-                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-3 py-1 rounded-full text-sm">
+                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">
                                     Commercial Construction
                                 </div>
                                 <span class="text-yellow-400">⭐</span>
                             </div>
-                            <h3 class="text-lg text-white font-semibold mb-2">Blue Bombers Stadium</h3>
-                            <p class="text-rdeb-red font-medium mb-2">Structural Steel & Construction</p>
-                            <div class="flex items-center space-x-1 text-sm text-gray-400 mb-3">
+                            <h3 class="text-base md:text-lg text-white mobile-text font-semibold mb-2">Blue Bombers Stadium</h3>
+                            <p class="text-rdeb-red font-medium mb-2 text-sm md:text-base">Structural Steel & Construction</p>
+                            <div class="flex items-center space-x-1 text-xs md:text-sm text-gray-400 mobile-text mb-3">
                                 <span>📍</span>
                                 <span>Winnipeg, MB</span>
                             </div>
-                            <p class="text-sm text-gray-300">Structural steel and construction coordination for Manitoba's premier sports facility</p>
+                            <p class="text-xs md:text-sm text-gray-300 mobile-text">Structural steel and construction coordination for Manitoba's premier sports facility</p>
                         </div>
                     </div>
 
                     <!-- Muskrat Falls -->
-                    <div class="bg-gray-900/80 border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
-                        <div class="p-6">
+                    <div class="bg-gray-900/80 mobile-card border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
+                        <div class="p-4 md:p-6">
                             <div class="flex justify-between items-start mb-4">
-                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-3 py-1 rounded-full text-sm">
+                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">
                                     Hydro-Mechanical
                                 </div>
                                 <span class="text-yellow-400">⭐</span>
                             </div>
-                            <h3 class="text-lg text-white font-semibold mb-2">Muskrat Falls Generating Station</h3>
-                            <p class="text-rdeb-red font-medium mb-2">General Superintendent – Gate Package</p>
-                            <div class="flex items-center space-x-1 text-sm text-gray-400 mb-3">
+                            <h3 class="text-base md:text-lg text-white mobile-text font-semibold mb-2">Muskrat Falls Generating Station</h3>
+                            <p class="text-rdeb-red font-medium mb-2 text-sm md:text-base">General Superintendent – Gate Package</p>
+                            <div class="flex items-center space-x-1 text-xs md:text-sm text-gray-400 mobile-text mb-3">
                                 <span>📍</span>
                                 <span>Newfoundland & Labrador</span>
                             </div>
-                            <p class="text-sm text-gray-300">Hydro mechanical installation including gates, trash racks, and stoplogs</p>
+                            <p class="text-xs md:text-sm text-gray-300 mobile-text">Hydro mechanical installation including gates, trash racks, and stoplogs</p>
                         </div>
                     </div>
 
                     <!-- Multiple Dam Refurbishments -->
-                    <div class="bg-gray-900/80 border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
-                        <div class="p-6">
+                    <div class="bg-gray-900/80 mobile-card border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
+                        <div class="p-4 md:p-6">
                             <div class="flex justify-between items-start mb-4">
-                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-3 py-1 rounded-full text-sm">
+                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">
                                     Hydro-Mechanical
                                 </div>
                                 <span class="text-yellow-400">⭐</span>
                             </div>
-                            <h3 class="text-lg text-white font-semibold mb-2">Multiple Dam Refurbishments</h3>
-                            <p class="text-rdeb-red font-medium mb-2">Construction Superintendent & Project Manager</p>
-                            <div class="flex items-center space-x-1 text-sm text-gray-400 mb-3">
+                            <h3 class="text-base md:text-lg text-white mobile-text font-semibold mb-2">Multiple Dam Refurbishments</h3>
+                            <p class="text-rdeb-red font-medium mb-2 text-sm md:text-base">Construction Superintendent & Project Manager</p>
+                            <div class="flex items-center space-x-1 text-xs md:text-sm text-gray-400 mobile-text mb-3">
                                 <span>📍</span>
                                 <span>Various Sites, Canada</span>
                             </div>
-                            <p class="text-sm text-gray-300">Led multiple dam refurbishment projects involving spillway gates, mechanical systems, and structural upgrades</p>
+                            <p class="text-xs md:text-sm text-gray-300 mobile-text">Led multiple dam refurbishment projects involving spillway gates, mechanical systems, and structural upgrades</p>
                         </div>
                     </div>
 
                     <!-- Agrium & Allan Potash Mines -->
-                    <div class="bg-gray-900/80 border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
-                        <div class="p-6">
+                    <div class="bg-gray-900/80 mobile-card border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
+                        <div class="p-4 md:p-6">
                             <div class="flex justify-between items-start mb-4">
-                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-3 py-1 rounded-full text-sm">
+                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">
                                     Mining Facility
                                 </div>
                                 <span class="text-yellow-400">⭐</span>
                             </div>
-                            <h3 class="text-lg text-white font-semibold mb-2">Agrium & Allan Potash Mines</h3>
-                            <p class="text-rdeb-red font-medium mb-2">Site Superintendent</p>
-                            <div class="flex items-center space-x-1 text-sm text-gray-400 mb-3">
+                            <h3 class="text-base md:text-lg text-white mobile-text font-semibold mb-2">Agrium & Allan Potash Mines</h3>
+                            <p class="text-rdeb-red font-medium mb-2 text-sm md:text-base">Site Superintendent</p>
+                            <div class="flex items-center space-x-1 text-xs md:text-sm text-gray-400 mobile-text mb-3">
                                 <span>📍</span>
                                 <span>Saskatchewan</span>
                             </div>
-                            <p class="text-sm text-gray-300">Large-scale potash mining facility construction and equipment installation</p>
+                            <p class="text-xs md:text-sm text-gray-300 mobile-text">Large-scale potash mining facility construction and equipment installation</p>
                         </div>
                     </div>
 
                     <!-- Snow Lake Gold Mine -->
-                    <div class="bg-gray-900/80 border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
-                        <div class="p-6">
+                    <div class="bg-gray-900/80 mobile-card border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
+                        <div class="p-4 md:p-6">
                             <div class="flex justify-between items-start mb-4">
-                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-3 py-1 rounded-full text-sm">
+                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">
                                     Mining Operations
                                 </div>
                                 <span class="text-yellow-400">⭐</span>
                             </div>
-                            <h3 class="text-lg text-white font-semibold mb-2">Snow Lake Gold Mine</h3>
-                            <p class="text-rdeb-red font-medium mb-2">Project Coordination</p>
-                            <div class="flex items-center space-x-1 text-sm text-gray-400 mb-3">
+                            <h3 class="text-base md:text-lg text-white mobile-text font-semibold mb-2">Snow Lake Gold Mine</h3>
+                            <p class="text-rdeb-red font-medium mb-2 text-sm md:text-base">Project Coordination</p>
+                            <div class="flex items-center space-x-1 text-xs md:text-sm text-gray-400 mobile-text mb-3">
                                 <span>📍</span>
                                 <span>Manitoba</span>
                             </div>
-                            <p class="text-sm text-gray-300">Gold mining facility construction and processing equipment coordination</p>
+                            <p class="text-xs md:text-sm text-gray-300 mobile-text">Gold mining facility construction and processing equipment coordination</p>
                         </div>
                     </div>
 
                     <!-- Fox Creek Pipeline Work -->
-                    <div class="bg-gray-900/80 border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
-                        <div class="p-6">
+                    <div class="bg-gray-900/80 mobile-card border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale">
+                        <div class="p-4 md:p-6">
                             <div class="flex justify-between items-start mb-4">
-                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-3 py-1 rounded-full text-sm">
+                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">
                                     Oil & Gas Pipeline
                                 </div>
                                 <span class="text-yellow-400">⭐</span>
                             </div>
-                            <h3 class="text-lg text-white font-semibold mb-2">Fox Creek Pipeline Work</h3>
-                            <p class="text-rdeb-red font-medium mb-2">Pipeline Construction Specialist</p>
-                            <div class="flex items-center space-x-1 text-sm text-gray-400 mb-3">
+                            <h3 class="text-base md:text-lg text-white mobile-text font-semibold mb-2">Fox Creek Pipeline Work</h3>
+                            <p class="text-rdeb-red font-medium mb-2 text-sm md:text-base">Pipeline Construction Specialist</p>
+                            <div class="flex items-center space-x-1 text-xs md:text-sm text-gray-400 mobile-text mb-3">
                                 <span>📍</span>
                                 <span>Alberta</span>
                             </div>
-                            <p class="text-sm text-gray-300">Oil and gas pipeline construction with specialized welding and installation</p>
+                            <p class="text-xs md:text-sm text-gray-300 mobile-text">Oil and gas pipeline construction with specialized welding and installation</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Centered Enbridge Project -->
-                <div class="flex justify-center mb-12">
-                    <div class="bg-gray-900/80 border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale max-w-md">
-                        <div class="p-6">
+                <div class="flex justify-center mb-8 md:mb-12">
+                    <div class="bg-gray-900/80 mobile-card border border-gray-800 hover:border-rdeb-red/50 transition-all duration-300 backdrop-blur rounded-lg overflow-hidden hover-scale max-w-md">
+                        <div class="p-4 md:p-6">
                             <div class="flex justify-between items-start mb-4">
-                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-3 py-1 rounded-full text-sm">
+                                <div class="bg-rdeb-red/90 text-white border-rdeb-red px-2 md:px-3 py-1 rounded-full text-xs md:text-sm">
                                     Oil & Gas Infrastructure
                                 </div>
                                 <span class="text-yellow-400">⭐</span>
                             </div>
-                            <h3 class="text-lg text-white font-semibold mb-2">Enbridge Tank Farm & Pump Station</h3>
-                            <p class="text-rdeb-red font-medium mb-2">Structural Steel & Piping Specialist</p>
-                            <div class="flex items-center space-x-1 text-sm text-gray-400 mb-3">
+                            <h3 class="text-base md:text-lg text-white mobile-text font-semibold mb-2">Enbridge Tank Farm & Pump Station</h3>
+                            <p class="text-rdeb-red font-medium mb-2 text-sm md:text-base">Structural Steel & Piping Specialist</p>
+                            <div class="flex items-center space-x-1 text-xs md:text-sm text-gray-400 mobile-text mb-3">
                                 <span>📍</span>
                                 <span>Fort McMurray, AB</span>
                             </div>
-                            <p class="text-sm text-gray-300">Complex structural steel and piping systems for major oil sands infrastructure facility</p>
+                            <p class="text-xs md:text-sm text-gray-300 mobile-text">Complex structural steel and piping systems for major oil sands infrastructure facility</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="text-center">
-                    <a href="#contact" class="bg-rdeb-red hover:bg-red-700 text-lg px-8 py-4 font-semibold rounded-md transition-colors hover-scale">
+                    <a href="#contact" class="bg-rdeb-red hover:bg-red-700 text-base md:text-lg px-6 md:px-8 py-3 md:py-4 font-semibold rounded-md transition-colors hover-scale">
                         📋 View Full Portfolio
                     </a>
                 </div>
@@ -423,40 +456,40 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-20">
+        <section id="about" class="py-12 md:py-20 mobile-section">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16 fade-in">
-                    <div class="mb-4 bg-rdeb-red/20 text-red-400 border border-red-600/30 text-lg px-4 py-2 rounded-full inline-block">
+                <div class="text-center mb-12 md:mb-16 fade-in">
+                    <div class="mb-4 bg-rdeb-red/20 text-red-400 border border-red-600/30 text-sm md:text-lg px-3 md:px-4 py-2 rounded-full inline-block">
                         About Russell De Blois
                     </div>
-                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 mobile-text">
                         Construction Professional & Project Leader
                     </h2>
                 </div>
 
                 <div class="max-w-4xl mx-auto">
-                    <div class="bg-gray-900/80 border border-gray-800 backdrop-blur rounded-lg p-8 mb-8">
-                        <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                            <strong class="text-white">Red Seal Ironworker</strong> and accomplished construction professional with <strong class="text-rdeb-red">25+ years of progressive industry experience</strong>, including 5 years of hands-on pipefitting expertise. Advanced from skilled tradesman to General Superintendent and successful business owner.
+                    <div class="bg-gray-900/80 mobile-card border border-gray-800 backdrop-blur rounded-lg p-6 md:p-8 mb-6 md:mb-8">
+                        <p class="text-base md:text-lg text-gray-300 mobile-text leading-relaxed mb-4 md:mb-6">
+                            <strong class="text-white mobile-text">Red Seal Ironworker</strong> and accomplished construction professional with <strong class="text-rdeb-red">25+ years of progressive industry experience</strong>, including 5 years of hands-on pipefitting expertise. Advanced from skilled tradesman to General Superintendent and successful business owner.
                         </p>
-                        <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                            Recognized for <strong class="text-white">calm leadership under pressure</strong>, strategic problem-solving, and relentless execution in demanding environments. <strong class="text-white">Brings hands-on trade experience to engineering collaborations</strong>, working closely with engineers to solve complex problems and bridge the gap between design and practical field implementation. Trusted by owners, general contractors, and subcontractors for expertise in project coordination, safety leadership, and practical solutions.
+                        <p class="text-base md:text-lg text-gray-300 mobile-text leading-relaxed mb-4 md:mb-6">
+                            Recognized for <strong class="text-white mobile-text">calm leadership under pressure</strong>, strategic problem-solving, and relentless execution in demanding environments. <strong class="text-white mobile-text">Brings hands-on trade experience to engineering collaborations</strong>, working closely with engineers to solve complex problems and bridge the gap between design and practical field implementation. Trusted by owners, general contractors, and subcontractors for expertise in project coordination, safety leadership, and practical solutions.
                         </p>
                         
-                        <div class="bg-rdeb-red/10 border border-rdeb-red/30 rounded-lg p-6 mb-8">
+                        <div class="bg-rdeb-red/10 border border-rdeb-red/30 rounded-lg p-4 md:p-6 mb-6 md:mb-8">
                             <div class="flex items-center justify-center mb-4">
                                 <div class="bg-rdeb-red rounded-lg p-3 mr-4">
                                     🔧
                                 </div>
                                 <div class="text-center">
-                                    <h3 class="text-xl font-bold text-white">Red Seal Ironworker</h3>
-                                    <p class="text-rdeb-red font-medium">+ 5 Years Pipefitting Experience</p>
+                                    <h3 class="text-lg md:text-xl font-bold text-white mobile-text">Red Seal Ironworker</h3>
+                                    <p class="text-rdeb-red font-medium text-sm md:text-base">+ 5 Years Pipefitting Experience</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="text-center mb-8">
-                            <a href="#contact" class="bg-rdeb-red hover:bg-red-700 text-lg px-8 py-4 font-semibold rounded-md transition-colors hover-scale">
+                        <div class="text-center mb-6 md:mb-8">
+                            <a href="#contact" class="bg-rdeb-red hover:bg-red-700 text-base md:text-lg px-6 md:px-8 py-3 md:py-4 font-semibold rounded-md transition-colors hover-scale">
                                 Work With RDEB Consulting Inc.
                             </a>
                         </div>
@@ -464,52 +497,52 @@
 
                     <!-- Technical Expertise Section -->
                     <div class="max-w-3xl mx-auto">
-                        <h3 class="text-2xl font-bold text-center mb-8 text-white">Technical Expertise</h3>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-gray-900/60 border border-gray-700 rounded-lg p-4">
-                                <div class="flex items-center space-x-2 text-rdeb-red font-medium">
+                        <h3 class="text-xl md:text-2xl font-bold text-center mb-6 md:mb-8 text-white mobile-text">Technical Expertise</h3>
+                        <div class="grid md:grid-cols-2 gap-3 md:gap-4">
+                            <div class="bg-gray-900/60 mobile-card border border-gray-700 rounded-lg p-3 md:p-4">
+                                <div class="flex items-center space-x-2 text-rdeb-red font-medium text-sm md:text-base">
                                     <span>✓</span>
                                     <span>Structural Steel Erection & Precast Installation</span>
                                 </div>
                             </div>
-                            <div class="bg-gray-900/60 border border-gray-700 rounded-lg p-4">
-                                <div class="flex items-center space-x-2 text-rdeb-red font-medium">
+                            <div class="bg-gray-900/60 mobile-card border border-gray-700 rounded-lg p-3 md:p-4">
+                                <div class="flex items-center space-x-2 text-rdeb-red font-medium text-sm md:text-base">
                                     <span>✓</span>
                                     <span>Hydro Mechanical Systems & Infrastructure</span>
                                 </div>
                             </div>
-                            <div class="bg-gray-900/60 border border-gray-700 rounded-lg p-4">
-                                <div class="flex items-center space-x-2 text-rdeb-red font-medium">
+                            <div class="bg-gray-900/60 mobile-card border border-gray-700 rounded-lg p-3 md:p-4">
+                                <div class="flex items-center space-x-2 text-rdeb-red font-medium text-sm md:text-base">
                                     <span>✓</span>
                                     <span>Industrial Piping & Process Systems</span>
                                 </div>
                             </div>
-                            <div class="bg-gray-900/60 border border-gray-700 rounded-lg p-4">
-                                <div class="flex items-center space-x-2 text-rdeb-red font-medium">
+                            <div class="bg-gray-900/60 mobile-card border border-gray-700 rounded-lg p-3 md:p-4">
+                                <div class="flex items-center space-x-2 text-rdeb-red font-medium text-sm md:text-base">
                                     <span>✓</span>
                                     <span>Crane Operations & Heavy Lift Coordination</span>
                                 </div>
                             </div>
-                            <div class="bg-gray-900/60 border border-gray-700 rounded-lg p-4">
-                                <div class="flex items-center space-x-2 text-rdeb-red font-medium">
+                            <div class="bg-gray-900/60 mobile-card border border-gray-700 rounded-lg p-3 md:p-4">
+                                <div class="flex items-center space-x-2 text-rdeb-red font-medium text-sm md:text-base">
                                     <span>✓</span>
                                     <span>Mining Facility Construction & Equipment</span>
                                 </div>
                             </div>
-                            <div class="bg-gray-900/60 border border-gray-700 rounded-lg p-4">
-                                <div class="flex items-center space-x-2 text-rdeb-red font-medium">
+                            <div class="bg-gray-900/60 mobile-card border border-gray-700 rounded-lg p-3 md:p-4">
+                                <div class="flex items-center space-x-2 text-rdeb-red font-medium text-sm md:text-base">
                                     <span>✓</span>
                                     <span>Oil & Gas Pipeline Construction</span>
                                 </div>
                             </div>
-                            <div class="bg-gray-900/60 border border-gray-700 rounded-lg p-4">
-                                <div class="flex items-center space-x-2 text-rdeb-red font-medium">
+                            <div class="bg-gray-900/60 mobile-card border border-gray-700 rounded-lg p-3 md:p-4">
+                                <div class="flex items-center space-x-2 text-rdeb-red font-medium text-sm md:text-base">
                                     <span>✓</span>
                                     <span>Commercial Building & Civil Construction</span>
                                 </div>
                             </div>
-                            <div class="bg-gray-900/60 border border-gray-700 rounded-lg p-4">
-                                <div class="flex items-center space-x-2 text-rdeb-red font-medium">
+                            <div class="bg-gray-900/60 mobile-card border border-gray-700 rounded-lg p-3 md:p-4">
+                                <div class="flex items-center space-x-2 text-rdeb-red font-medium text-sm md:text-base">
                                     <span>✓</span>
                                     <span>Safety & Environmental Compliance</span>
                                 </div>
@@ -521,45 +554,45 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20">
+        <section id="contact" class="py-12 md:py-20">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16 fade-in">
-                    <div class="mb-4 bg-rdeb-red/20 text-red-400 border border-red-600/30 text-lg px-4 py-2 rounded-full inline-block">
+                <div class="text-center mb-12 md:mb-16 fade-in">
+                    <div class="mb-4 bg-rdeb-red/20 text-red-400 border border-red-600/30 text-sm md:text-lg px-3 md:px-4 py-2 rounded-full inline-block">
                         Get Started
                     </div>
-                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 mobile-text">
                         Start Your Consultation
                     </h2>
-                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-base md:text-xl text-gray-300 mobile-text max-w-3xl mx-auto leading-relaxed">
                         Get expert guidance for your construction project challenges. Share your project details and we'll provide strategic solutions.
                     </p>
                 </div>
 
                 <div class="max-w-2xl mx-auto">
-                    <form class="bg-gray-900/80 border border-gray-800 backdrop-blur rounded-lg p-8" onsubmit="handleFormSubmit(event)">
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <form class="bg-gray-900/80 mobile-card border border-gray-800 backdrop-blur rounded-lg p-6 md:p-8" onsubmit="handleFormSubmit(event)">
+                        <div class="grid md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
                             <div>
-                                <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company Name *</label>
-                                <input type="text" id="company" name="company" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:border-rdeb-red transition-colors">
+                                <label for="company" class="block text-sm font-medium text-gray-300 mobile-text mb-2">Company Name *</label>
+                                <input type="text" id="company" name="company" required class="w-full px-3 md:px-4 py-2 md:py-3 bg-gray-800 border border-gray-700 rounded-md text-white mobile-text focus:outline-none focus:border-rdeb-red transition-colors text-sm md:text-base">
                             </div>
                             <div>
-                                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Your Name *</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:border-rdeb-red transition-colors">
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:border-rdeb-red transition-colors">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:border-rdeb-red transition-colors">
+                                <label for="name" class="block text-sm font-medium text-gray-300 mobile-text mb-2">Your Name *</label>
+                                <input type="text" id="name" name="name" required class="w-full px-3 md:px-4 py-2 md:py-3 bg-gray-800 border border-gray-700 rounded-md text-white mobile-text focus:outline-none focus:border-rdeb-red transition-colors text-sm md:text-base">
                             </div>
                         </div>
-                        <div class="mb-6">
-                            <label for="project-type" class="block text-sm font-medium text-gray-300 mb-2">Project Type</label>
-                            <select id="project-type" name="project-type" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:border-rdeb-red transition-colors">
+                        <div class="grid md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mobile-text mb-2">Email Address *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-3 md:px-4 py-2 md:py-3 bg-gray-800 border border-gray-700 rounded-md text-white mobile-text focus:outline-none focus:border-rdeb-red transition-colors text-sm md:text-base">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-300 mobile-text mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-3 md:px-4 py-2 md:py-3 bg-gray-800 border border-gray-700 rounded-md text-white mobile-text focus:outline-none focus:border-rdeb-red transition-colors text-sm md:text-base">
+                            </div>
+                        </div>
+                        <div class="mb-4 md:mb-6">
+                            <label for="project-type" class="block text-sm font-medium text-gray-300 mobile-text mb-2">Project Type</label>
+                            <select id="project-type" name="project-type" class="w-full px-3 md:px-4 py-2 md:py-3 bg-gray-800 border border-gray-700 rounded-md text-white mobile-text focus:outline-none focus:border-rdeb-red transition-colors text-sm md:text-base">
                                 <option value="">Select Project Type</option>
                                 <option value="structural-steel">Structural Steel & Heavy Lift</option>
                                 <option value="hydro-mechanical">Hydro-Mechanical Systems</option>
@@ -570,20 +603,20 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Details *</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:border-rdeb-red transition-colors" placeholder="Describe your project challenges, timeline, and how we can help..."></textarea>
+                        <div class="mb-4 md:mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-300 mobile-text mb-2">Project Details *</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-3 md:px-4 py-2 md:py-3 bg-gray-800 border border-gray-700 rounded-md text-white mobile-text focus:outline-none focus:border-rdeb-red transition-colors text-sm md:text-base" placeholder="Describe your project challenges, timeline, and how we can help..."></textarea>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="bg-rdeb-red hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-md transition-colors hover-scale">
+                            <button type="submit" class="bg-rdeb-red hover:bg-red-700 text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-md transition-colors hover-scale text-sm md:text-base">
                                 📧 Send Message
                             </button>
                         </div>
                     </form>
                 </div>
 
-                <div class="text-center mt-12">
-                    <p class="text-gray-400">
+                <div class="text-center mt-8 md:mt-12">
+                    <p class="text-gray-400 mobile-text text-sm md:text-base">
                         Available for projects across Canada. Specializing in stepping into challenging job sites to resolve complex issues and restore productivity.
                     </p>
                 </div>
@@ -591,28 +624,28 @@
         </section>
 
         <!-- Footer -->
-        <footer class="py-16 border-t border-gray-800/50">
+        <footer class="py-12 md:py-16 border-t border-gray-800/50">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-8">
+                <div class="text-center mb-6 md:mb-8">
                     <!-- Large Centered Logo -->
                     <div class="mb-4">
-                        <img src="rdeb-logo-original.webp" alt="RDEB Consulting Inc." class="h-24 w-auto mx-auto">
+                        <img src="rdeb-logo-original.webp" alt="RDEB Consulting Inc." class="h-16 md:h-24 w-auto mx-auto">
                     </div>
-                    <p class="text-lg text-gray-300 font-medium">Strategic Construction Project Leadership & Consulting</p>
+                    <p class="text-base md:text-lg text-gray-300 mobile-text font-medium">Strategic Construction Project Leadership & Consulting</p>
                 </div>
                 
-                <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="grid md:grid-cols-3 gap-6 md:gap-8 text-center">
                     <div>
-                        <h4 class="text-white font-semibold mb-2">Email</h4>
-                        <p class="text-gray-400">russ@rdebconsulting.com</p>
+                        <h4 class="text-white mobile-text font-semibold mb-2 text-sm md:text-base">Email</h4>
+                        <p class="text-gray-400 mobile-text text-sm md:text-base">russ@rdebconsulting.com</p>
                     </div>
                     <div>
-                        <h4 class="text-white font-semibold mb-2">Location</h4>
-                        <p class="text-gray-400">Manitoba, Canada</p>
+                        <h4 class="text-white mobile-text font-semibold mb-2 text-sm md:text-base">Location</h4>
+                        <p class="text-gray-400 mobile-text text-sm md:text-base">Manitoba, Canada</p>
                     </div>
                     <div>
-                        <h4 class="text-white font-semibold mb-2">Copyright</h4>
-                        <p class="text-gray-400">© 2024 RDEB Consulting Inc.</p>
+                        <h4 class="text-white mobile-text font-semibold mb-2 text-sm md:text-base">Copyright</h4>
+                        <p class="text-gray-400 mobile-text text-sm md:text-base">© 2024 RDEB Consulting Inc.</p>
                     </div>
                 </div>
             </div>
